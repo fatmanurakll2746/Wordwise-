@@ -1,19 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8">
   <title>Wordwise</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .word {
+      font-size: 20px;
+      margin: 10px 0;
+      cursor: pointer;
+      color: #007aff;
+    }
+    .meaning {
+      margin-left: 10px;
+      color: #333;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
 
 <h1>Wordwise</h1>
-<p>Tap a word</p>
+<p>Bir kelimeye dokun: ses + Türkçe 🔊🇹🇷</p>
 
-<ul>
-  <li onclick="alert('actually')">actually</li>
-  <li onclick="alert('prefer')">prefer</li>
-  <li onclick="alert('realize')">realize</li>
-</ul>
+<div class="word" onclick="speak('actually')">
+  actually
+  <div class="meaning">= aslında</div>
+</div>
+
+<div class="word" onclick="speak('prefer')">
+  prefer
+  <div class="meaning">= tercih etmek</div>
+</div>
+
+<div class="word" onclick="speak('realize')">
+  realize
+  <div class="meaning">= fark etmek</div>
+</div>
+
+<script>
+  function speak(word) {
+    const speech = new SpeechSynthesisUtterance(word);
+    speech.lang = 'en-US';
+    window.speechSynthesis.speak(speech);
+  }
+</script>
 
 </body>
 </html>
