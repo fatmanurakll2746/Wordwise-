@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -8,46 +9,58 @@
       font-family: Arial, sans-serif;
       padding: 20px;
     }
-    .word {
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    .en {
       font-size: 20px;
-      margin: 10px 0;
-      cursor: pointer;
+      font-weight: bold;
       color: #007aff;
     }
-    .meaning {
-      margin-left: 10px;
-      color: #333;
+    .tr {
+      margin-top: 6px;
       font-size: 16px;
+      color: #333;
+    }
+    .ex {
+      margin-top: 4px;
+      font-size: 14px;
+      color: #666;
+      font-style: italic;
     }
   </style>
 </head>
 <body>
 
 <h1>Wordwise</h1>
-<p>Bir kelimeye dokun: ses + Türkçe 🔊🇹🇷</p>
+<p>Kelime – Türkçe – Örnek</p>
 
-<div class="word" onclick="speak('actually')">
-  actually
-  <div class="meaning">= aslında</div>
+<div class="card">
+  <div class="en">actually</div>
+  <div class="tr">= aslında</div>
+  <div class="ex">Example: I actually like studying.</div>
 </div>
 
-<div class="word" onclick="speak('prefer')">
-  prefer
-  <div class="meaning">= tercih etmek</div>
+<div class="card">
+  <div class="en">prefer</div>
+  <div class="tr">= tercih etmek</div>
+  <div class="ex">Example: I prefer tea.</div>
 </div>
 
-<div class="word" onclick="speak('realize')">
-  realize
-  <div class="meaning">= fark etmek</div>
+<div class="card">
+  <div class="en">realize</div>
+  <div class="tr">= fark etmek</div>
+  <div class="ex">Example: I realized my mistake.</div>
 </div>
 
-<script>
-  function speak(word) {
-    const speech = new SpeechSynthesisUtterance(word);
-    speech.lang = 'en-US';
-    window.speechSynthesis.speak(speech);
-  }
-</script>
+<div class="card">
+  <div class="en">confident</div>
+  <div class="tr">= kendine güvenen</div>
+  <div class="ex">Example: She is confident.</div>
+</div>
 
 </body>
 </html>
